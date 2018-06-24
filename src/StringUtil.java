@@ -25,7 +25,7 @@ public class StringUtil {
     }
 
     //apply ECDSA signature and returns the result as bytes
-    public static byte[] applyECDSASig(PrivateKey privateKey, String input) {
+    public static byte[] applyECDSASignature(PrivateKey privateKey, String input) {
         Signature dsa;
         byte[] output = new byte[0];
         try {
@@ -42,7 +42,7 @@ public class StringUtil {
     }
 
     //verifies a String signature
-    public static boolean verifyECDSASig(PublicKey publicKey, String data, byte[] signature) {
+    public static boolean verifyECDSASignature(PublicKey publicKey, String data, byte[] signature) {
         try {
             Signature ecdsaVerify = Signature.getInstance("ECDSA", "BC");
             ecdsaVerify.initVerify(publicKey);
